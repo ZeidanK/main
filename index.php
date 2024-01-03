@@ -13,7 +13,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.php">Welcome Karim, this is the list of your guests</a>
+        <a class="navbar-brand" href="index.php">Welcome, this is the list of our clients</a>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
@@ -49,8 +49,8 @@
         while($row=$result->fetch_assoc()){
           echo "
       <tr>
-        <th>$row[id]</th>
-        <td>$row[name]</td>
+        <td>$row[id]</td>
+        <td><a href= 'guestlist.php?id={$row['name']}'>$row[name]</a></td>
         <td>$row[email]</td>
         <td>$row[phone]</td>
         <td>$row[join_date]</td>
