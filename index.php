@@ -67,3 +67,15 @@
     <script src="./tablesort.js"></script>
   </body>
 </html>
+<html>
+  <head>
+    <title>Website Counter</title>
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>Website visit count:</div>
+    <div class="website-counter"></div>
+    <button id="reset">Reset</button>
+  </body>
+</html>
