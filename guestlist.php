@@ -68,6 +68,16 @@
         }
 
     }
+
+    
+      // At this point unique visitor record is created successfully. Now update total_views of specific page.
+      $query = "UPDATE crud100 SET visit = visit + 1 WHERE name='$DB'";
+      
+      if(!mysqli_query($conn, $query))
+      {
+        echo "Error updating record: " . mysqli_error($conn);
+      }
+    
     ?>
     </tbody>
   </table>
@@ -77,3 +87,43 @@
     <script src="./tablesort.js"></script>
   </body>
 </html>
+
+<html>
+  <head>
+    <title>Website Counterqq</title>
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>Website visit count:</div>
+    <div class="website-counter"></div>
+    <button id="reset">Reset</button>
+  </body>
+</html> 
+<!--
+ <?php
+//function add_view($conn, $visitor_ip, $page_id)
+//{
+  //if(is_unique_view($conn, $visitor_ip, $page_id) === true)
+  //{
+    // insert unique visitor record for checking whether the visit is unique or not in future.
+    //$query = "INSERT INTO page_views (visitor_ip, page_id) VALUES ('$visitor_ip', '$page_id')";
+    
+   // if(mysqli_query($conn, $query))
+    //{
+      // At this point unique visitor record is created successfully. Now update total_views of specific page.
+     // $query = "UPDATE pages SET total_views = total_views + 1 WHERE id='$page_id'";
+      
+     // if(!mysqli_query($conn, $query))
+     // {
+      //  echo "Error updating record: " . mysqli_error($conn);
+     // }
+   // }
+   // else
+   // {
+   //   echo "Error inserting record: " . mysqli_error($conn);
+   // }
+  //} 
+//}
+//?> 
+-->

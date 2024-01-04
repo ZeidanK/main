@@ -64,12 +64,21 @@
       </div>
     
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="./tablesort.js"></script>
+   <!-- <script src="./tablesort.js"></script>
+    
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  
+ 
+    <div>Website visit count:</div>
+    <div class="website-counter"></div>
+    <button id="reset">Reset</button> -->
+  
   </body>
 </html>
-<html>
+ <html>
   <head>
-    <title>Website Counter</title>
+    <title>Website Counterqq</title>
     <script defer src="index.js"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -78,4 +87,4 @@
     <div class="website-counter"></div>
     <button id="reset">Reset</button>
   </body>
-</html>
+</html> 
