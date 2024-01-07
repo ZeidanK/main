@@ -30,18 +30,22 @@
     <table class="table table-sortable">
     <thead>
       <tr>
-        <th>ID</th>
+       <th>ID</th>
         <th>NAME</th>
         <th>EMAIL</th>
         <th>PHONE</th>
-        <th>JOINING DATE</th>
+        <th>WEDDINGDATE</th>
+        <th>INVITETXT</th>
+        
+        
+       
         <!-- <th>ACTIONS</th> -->
       </tr>
     </thead>
     <tbody>
       <?php
         include "connection.php";
-        $sql = "select * from crud100";
+        $sql = "select * from clientlist";
         $result = $conn->query($sql);
         if(!$result){
           die("Invalid query!");
@@ -50,10 +54,13 @@
           echo "
       <tr>
         <td>$row[id]</td>
-        <td><a href= 'guestlist.php?id={$row['name']}'>$row[name]</a></td>
+        <td><a href= 'guestlist.php?id={$row['slug']}'>$row[fullname]</a></td>
         <td>$row[email]</td>
         <td>$row[phone]</td>
-        <td>$row[join_date]</td>
+        <td>$row[weddingdate]</td>
+        
+        <td>$row[invitetxt]</td>
+        
          
       </tr>
       ";

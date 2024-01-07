@@ -2,6 +2,10 @@
 
 <html lang="en">  
   <head>
+    <?php 
+   
+    
+    ?>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +18,20 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.php">مرخبا hello  <?php $DB=$_GET['id']; echo  "$DB"  ;?></a>
+        <a class="navbar-brand" href="index.php">مرخبا hello  <?php $DB=$_GET['id']; //echo  "$DB"  ; 
+
+include "connection.php";
+$sqltee = "select * from clientlist WHERE slug='$DB'";
+    $resulttee = $conn->query($sqltee);
+if(!$resulttee){
+  die("Invalid query!");
+}
+$row=$resulttee->fetch_assoc();
+
+echo "$row[fullname]" ;
+
+
+          ?> </a>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
@@ -31,11 +48,12 @@
     <table class="table table-sortable">
     <thead>
       <tr>
-        <th>ID</th>
+        
         <th>NAME</th>
-        <th>EMAIL</th>
         <th>PHONE</th>
-        <th>JOINING DATE</th>
+        <th>EMAIL</th>
+        <th>OPENLINK?</th>
+        
        <!-- <th>ACTIONS</th> -->
       </tr>
     </thead>
@@ -57,11 +75,11 @@
         while($row=$result->fetch_assoc()){
           echo "
       <tr>
-        <td>$row[id]</td>
-        <td>$row[name]</td>
-        <td>$row[email]</td>
+        <td><a href= 'guestinvite.php?guest={$row['slug']}&client={$row['clientslug']}'>$row[fullname]</a></td>
         <td>$row[phone]</td>
-        <td>$row[join_date]</td>
+        <td>$row[email]</td>
+        <td>$row[visitcount]</td>
+        
         
       </tr>
       ";
@@ -71,12 +89,12 @@
 
     
       // At this point unique visitor record is created successfully. Now update total_views of specific page.
-      $query = "UPDATE crud100 SET visit = visit + 1 WHERE name='$DB'";
+      //$query = "UPDATE crud100 SET visit = visit + 1 WHERE name='$DB'";
       
-      if(!mysqli_query($conn, $query))
-      {
-        echo "Error updating record: " . mysqli_error($conn);
-      }
+      //if(!mysqli_query($conn, $query))
+      //{
+     //   echo "Error updating record: " . mysqli_error($conn);
+      //}
     
     ?>
     </tbody>
