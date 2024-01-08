@@ -37,9 +37,7 @@ echo "$row[fullname]" ;
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             </li>
-            <li class="nav-item">
-              <a type="button" class="btn btn-primary nav-link active" href="create.php">Add New</a>
-            </li>
+           
           </ul>
         </div>
       </div>
@@ -83,13 +81,14 @@ echo "$row[fullname]" ;
         
       </tr>
       ";
-        }
+      $sql = "UPDATE malmmash123 SET visitcount =  1  ";
+    }
 
     }
 
     
       // At this point unique visitor record is created successfully. Now update total_views of specific page.
-      //$query = "UPDATE crud100 SET visit = visit + 1 WHERE name='$DB'";
+      $query = "UPDATE malmmash123 SET visitcount = visitcount + 1 ";
       
       //if(!mysqli_query($conn, $query))
       //{
@@ -106,7 +105,7 @@ echo "$row[fullname]" ;
   </body>
 </html>
 
-<html>
+<!-- <html>
   <head>
     <title>Website Counterqq</title>
     <script defer src="index.js"></script>
@@ -117,7 +116,7 @@ echo "$row[fullname]" ;
     <div class="website-counter"></div>
     <button id="reset">Reset</button>
   </body>
-</html> 
+</html>  -->
 <!--
  <?php
 //function add_view($conn, $visitor_ip, $page_id)
