@@ -73,7 +73,7 @@ echo "$row[fullname]" ;
         while($row=$result->fetch_assoc()){
           echo "
       <tr>
-        <td><a href= 'guestinvite.php?guest={$row['slug']}&client={$row['clientslug']}'>$row[fullname]</a></td>
+        <td><a href= 'page-4.php?guest={$row['slug']}&client={$row['clientslug']}'>$row[fullname]</a></td>
         <td>$row[phone]</td>
         <td>$row[email]</td>
         <td>$row[visitcount]</td>
